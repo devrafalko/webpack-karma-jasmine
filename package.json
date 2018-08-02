@@ -1,0 +1,46 @@
+{
+  "name": "webpack-karma-jasmine",
+  "version": "2.0.1",
+  "description": "Configuration for karma jasmine",
+  "keywords": [
+    "webpack",
+    "babel",
+    "karma",
+    "jasmine",
+    "unit",
+    "test",
+    "config"
+  ],
+  "author": "Pawel Rafalko <dev.rafalko@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jasmine-core": "^3.1.0",
+    "karma": "^2.0.5",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-edge-launcher": "^0.4.2",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-jasmine-html-reporter": "^1.2.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-opera-launcher": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-spec-reporter": "0.0.32",
+    "karma-webpack": "^3.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0"
+  },
+  "scripts": {
+    "postinstall": "npm install karma-cli -g"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devrafalko/webpack-karma-jasmine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devrafalko/webpack-karma-jasmine/issues"
+  },
+  "homepage": "https://github.com/devrafalko/webpack-karma-jasmine#readme"
+}
