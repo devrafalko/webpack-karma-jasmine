@@ -24,6 +24,8 @@ The suggestion of `karma.conf.js` configuration
 
 ```javascript
 module.exports = function(config) {
+  const webpackConfig = require('./webpack.config.js');
+
   config.set({
     //root path location to resolve paths defined in files and exclude
     basePath: '',
@@ -90,6 +92,8 @@ module.exports = function(config) {
     },
 
     /*karma-webpack config*/
+    //pass your webpack configuration for karma
+    webpack: webpackConfig,
     preprocessors: {
       //use webpack to support require() in test-suits .js files
       //use babel-loader from webpack to compile es2015 features in .js files
