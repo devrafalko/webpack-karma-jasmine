@@ -23,9 +23,9 @@ This is the full description of the sample above.
 The suggestion of `karma.conf.js` configuration
 
 ```javascript
-module.exports = function(config) {
-  const webpackConfig = require('./webpack.config.js');
+const webpackConfig = require('./webpack.config.js');
 
+module.exports = function(config) {
   config.set({
     //root path location to resolve paths defined in files and exclude
     basePath: '',
