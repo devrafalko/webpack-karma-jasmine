@@ -105,7 +105,7 @@ module.exports = function(config) {
             exclude:/(node_modules)/,
             loader:'babel-loader',
             options:{
-              presets:['env']
+              presets:['@babel/preset-env']
             }
           }
         ]

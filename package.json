@@ -14,6 +14,9 @@
   "author": "Pawel Rafalko <dev.rafalko@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.2",
     "jasmine-core": "^3.1.0",
     "karma": "^3.0.0",
     "karma-chrome-launcher": "^2.2.0",
@@ -27,10 +30,7 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-safari-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.32",
-    "karma-webpack": "^3.0.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.2",
-    "babel-preset-env": "^1.7.0"
+    "karma-webpack": "^3.0.0"
   },
   "scripts": {
     "postinstall": "npm install karma-cli -g"
