@@ -1,5 +1,3 @@
-const webpackConfig = require('./webpack.config.js');
-
 module.exports = function(config) {
   config.set({
     //root path location to resolve paths defined in files and exclude
@@ -8,16 +6,15 @@ module.exports = function(config) {
     exclude: [],
     //files/patterns to load in the browser
     files: [
-      {pattern: 'src/*.js', watched:true, served:false, included:false, nocache:false},
       {pattern: 'tests/*.js',watched:true,served:true,included:true}
-      /*parameters*/
-          //watched: if autoWatch is true all files that have set watched to true will be watched for changes
-          //served: should the files be served by Karma's webserver?
-          //included: should the files be included in the browser using <script> tag?
-          //nocache: should the files be served from disk on each request by Karma's webserver?
-      /*assets*/
-          //{pattern: '*.html', watched:true, served:true, included:false}
-          //{pattern: 'images/*', watched:false, served:true, included:false}      
+      /*parameters:
+          watched: if autoWatch is true all files that have set watched to true will be watched for changes
+          served: should the files be served by Karma's webserver?
+          included: should the files be included in the browser using <script> tag?
+          nocache: should the files be served from disk on each request by Karma's webserver? */
+      /*assets:
+          {pattern: '*.html', watched:true, served:true, included:false}
+          {pattern: 'images/*', watched:false, served:true, included:false} */    
     ],
 	
     //executes the tests whenever one of watched files changes
@@ -66,13 +63,26 @@ module.exports = function(config) {
       }
     },
 
-    /*karma-webpack config*/
-    //pass your webpack configuration for karma
-    webpack: webpackConfig,
+    /* karma-webpack config
+       pass your webpack configuration for karma
+       add `babel-loader` to the webpack configuration
+       to make the ES6+ code readible to the browser */
+    webpack: {
+      module: {
+        rules: [
+          {
+            test: /\.js$/i,
+            exclude:/(node_modules)/,
+            loader:'babel-loader',
+            options:{
+              presets:['env']
+            }
+          }
+        ]
+      }
+    },
     preprocessors: {
-      //use webpack to support require() in test-suits .js files
-      //use babel-loader from webpack to compile es2015 features in .js files
-      //add webpack as preprocessor
+      //add webpack as preprocessor to support require() in test-suits .js files
       './tests/*.js': ['webpack']
     },
     webpackMiddleware: {
