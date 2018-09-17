@@ -1,6 +1,6 @@
 {
   "name": "webpack-karma-jasmine",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Configuration for karma jasmine",
   "keywords": [
     "webpack",
