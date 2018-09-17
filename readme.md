@@ -5,7 +5,7 @@ Use `npm install webpack-karma-jasmine` instead of installing all dependencies a
 
 > If you want to test your `.html` files with **DOM** see [karma-html](https://www.npmjs.com/package/karma-html) package.
 
-This package is the suggestion of karma configuretion. It uses:
+This package is the suggestion of karma configuration. It uses:
 * `karma-webpack` and `babel-loader` to compile ES2015 javascript features and bundle **specs** and **tests** `.js` files together
 * `karma-jasmine` *(to use another framework, install it manually)*
 * `karma-mocha-reporter` bash reporter

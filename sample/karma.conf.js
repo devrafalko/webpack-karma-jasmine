@@ -8,7 +8,7 @@ module.exports = function(config) {
     files: [
       {pattern: 'tests/*.js',watched:true,served:true,included:true}
       /*parameters:
-          watched: if autoWatch is true all files that have set watched to true will be watched for changes
+          watched: if autoWatch is true all files that have watched set to true will be watched for changes
           served: should the files be served by Karma's webserver?
           included: should the files be included in the browser using <script> tag?
           nocache: should the files be served from disk on each request by Karma's webserver? */
@@ -17,7 +17,7 @@ module.exports = function(config) {
           {pattern: 'images/*', watched:false, served:true, included:false} */    
     ],
 	
-    //executes the tests whenever one of watched files changes
+    //executes the tests whenever one of the watched files changes
     autoWatch: true,
     //if true, Karma will run tests and then exit browser
     singleRun:false,
@@ -66,7 +66,7 @@ module.exports = function(config) {
     /* karma-webpack config
        pass your webpack configuration for karma
        add `babel-loader` to the webpack configuration
-       to make the ES6+ code readible to the browser */
+       to make the ES6+ code readable by the browser */
     webpack: {
       module: {
         rules: [
@@ -82,11 +82,11 @@ module.exports = function(config) {
       }
     },
     preprocessors: {
-      //add webpack as preprocessor to support require() in test-suits .js files
+      //add webpack as preprocessor to support require() in test-suites .js files
       './tests/*.js': ['webpack']
     },
     webpackMiddleware: {
-      //turn off webpack bash output when run the tests
+      //turn off webpack bash output when running the tests
       noInfo: true,
       stats: 'errors-only'
     },
