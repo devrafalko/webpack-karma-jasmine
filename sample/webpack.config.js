@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  mode:'production',
+  mode: 'production',
   entry: {
-    index:'./src/index.js'
+    index: './src/index.js'
   },
   output: {
     filename: 'bundled.js',
@@ -13,10 +13,10 @@ module.exports = {
     rules: [
       {
         test: /\.js$/i,
-        exclude:/(node_modules)/,
-        loader:'babel-loader',
-        options:{
-          presets:['@babel/env']
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/env']
         }
       }
     ]

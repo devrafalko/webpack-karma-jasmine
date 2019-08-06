@@ -1,1 +1,1 @@
-module.exports = ()=> 10;
+export default ()=> 10;

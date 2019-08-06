@@ -57,7 +57,7 @@ module.exports = function (config) {
     //reduce the kind of information passed to the bash
     logLevel: config.LOG_WARN, //config.LOG_DISABLE, config.LOG_ERROR, config.LOG_INFO, config.LOG_DEBUG
 
-    //list of frameworks you want to use, only jasmine is installed automatically
+    //list of frameworks you want to use, only jasmine is installed with this boilerplate
     frameworks: ['jasmine'],
     //list of browsers to launch and capture
     browsers: ['Chrome'/*,'PhantomJS','Firefox','Edge','ChromeCanary','Opera','IE','Safari'*/],
@@ -96,7 +96,9 @@ module.exports = function (config) {
 
     /* karma-webpack config
        pass your webpack configuration for karma
-       add `babel-loader` to the webpack configuration to make the ES6+ code readable to the browser */
+       add `babel-loader` to the webpack configuration to make 
+       the ES6+ code in the test files readable to the browser  
+       eg. import, export keywords */
     webpack: {
       module: {
         rules: [
@@ -131,7 +133,7 @@ module.exports = function (config) {
 
 #### 3. adjust the folders structure to your needs
 * Adjust `basePath` and `excludes` property, `files` `pattern` properties,  and `preprocessors` properties to your need.
-* The configuration assumes that the following folder structure is arranged:
+* The configuration assumes that the following folder structure is arranged in the following way:
 ```
 ┌ karma.conf.js
 ├ package.json
@@ -148,7 +150,8 @@ module.exports = function (config) {
 
 ##### `tests/spec_a.js`
 ```javascript
-const myModule = require('./../src/index.js');
+import myModule from './../src/index.js';
+
 describe("Module should return", function () {
   it("some number", function () {
     expect(myModule()).toEqual(10);
@@ -158,12 +161,15 @@ describe("Module should return", function () {
 
 ##### `src/index.js`
 ```javascript
-module.exports = ()=> 10;
+export default ()=> 10;
 ```
 
 #### 5. Run tests:
-* you can call `karma start` in the terminal
-* or add `"scripts": { "test": "karma start" }` to your `package.json` and call tests with `npm test`
+* add `"scripts": { "test": "karma start" }` to your `package.json` and run tests with `npm test`
+* or run `karma start` in the terminal *(but first install `karma-cli` globally)*
+```bash
+> npm install karma-cli -g
+```
 
 ### Links
 * [karma configuration file docs](http://karma-runner.github.io/1.0/config/configuration-file.html)
