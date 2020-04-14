@@ -10,8 +10,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6",
-    "webpack-karma-jasmine": "^3.0.8"
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-karma-jasmine": "^4.0.0"
   }
 }
